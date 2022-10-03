@@ -60,7 +60,7 @@ const ProductCard = ({ count, handleCount, handleCart }) => {
 					dragcontraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
 					whileTap={{ cursor: 'grabbing' }}
 				>
-					<div className='flex flex-col items-center justify-between w-1/2 h-[30rem]'>
+					<div className='flex flex-col items-center justify-between w-1/2 h-[40rem] lg:h-[30rem]'>
 						<div className='flex flex-0 flex-col items-start w-screen lg:w-full space-y-1 h-[10%] px-8 mt-6'>
 							<h1 className='text-xl uppercase'>Razer Blade 15</h1>
 							<h1 className='text-lg'>
