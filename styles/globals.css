@@ -1,16 +1,77 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	body {
+		@apply bg-black overflow-hidden overflow-y-auto;
+	}
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@layer components {
+	.card {
+		@apply relative flex flex-col w-[22rem] h-[39rem] bg-[#1d1f21] rounded-lg drop-shadow-xl text-white cursor-grab border-gray-500 border-2 border-opacity-5;
+	}
+	.product-card {
+		@apply relative flex flex-col w-full h-[30rem] bg-[#1d1f21] rounded-lg drop-shadow-xl text-white cursor-grab border-gray-500 border-2 border-opacity-5;
+	}
+
+	.top-container {
+		@apply flex min-w-full h-2/3 relative flex-col items-center justify-center py-[1em];
+	}
+	.circle-wrapper {
+		@apply absolute top-0 left-0 min-w-full min-h-full overflow-hidden rounded-md;
+	}
+
+	.circle {
+		@apply absolute w-[350px] h-[350px] top-[-2em] right-[-6em] -z-10  bg-[#fbbe01] rounded-full;
+	}
+
+	.bottom-container {
+		@apply flex items-start justify-center h-1/3;
+	}
+
+	.shoes-wrapper {
+		@apply flex w-full h-full absolute items-start justify-start;
+	}
+
+	.nike-text {
+		@apply uppercase m-0  text-7xl font-semibold mt-32;
+	}
 }
 
-* {
-  box-sizing: border-box;
+@layer utilities {
+	/* Chrome, Safari and Opera */
+	.scrollbar-hide::-webkit-scrollbar {
+		display: none;
+	}
+
+	.scrollbar-hide {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+		scrollbar-height: none;
+	}
+	/* width */
+	::-webkit-scrollbar {
+		@apply w-[8.5px] h-2.5 rounded-md;
+	}
+
+	/* Track */
+	::-webkit-scrollbar-track {
+		@apply bg-transparent;
+	}
+
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		@apply rounded-md bg-black  shadow-sm hover:bg-[#0B0B45] hover:bg-opacity-50 ;
+	}
+
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+		@apply cursor-pointer;
+	}
+
+	::-webkit-scrollbar-corner {
+		@apply opacity-0;
+	}
 }
